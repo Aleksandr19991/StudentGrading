@@ -1,6 +1,6 @@
 ﻿using GradeBook.Models.Requests;
-using GradeBook.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
+using StudentGrading.Models;
 
 namespace GradeBook.Controllers
 {
@@ -23,27 +23,12 @@ namespace GradeBook.Controllers
             return Ok();
         }
 
-        // GET: api/<UsersController>
-        [HttpGet]
-        public ActionResult<List<UserResponse>> GetUsers()
-        {
-            return Ok();
-        }
-
-        // GET api/<CoursesController>/5
-        [HttpGet("{id}")]
-        public ActionResult<List<UserWithCourseResponse>> GetCourseByUserId([FromRoute] Guid id)
-        {
-            var course = new UserWithCourseResponse();
-            return Ok(course);
-        }
-
         // GET api/<UsersController>/5
         [HttpGet("{id}")]
-        public ActionResult<UserWithCourseResponse> GetUserById([FromRoute] Guid id)
+        public ActionResult<UserRole> GetRoleByUserId([FromRoute] Guid id)
         {
-            var user = new UserWithCourseResponse();
-            return Ok(user);
+            var role = new UserRole();
+            return Ok(role);
         }
 
         // PUT api/<UsersController>/5

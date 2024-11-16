@@ -24,19 +24,19 @@ namespace GradeBook.Controllers
         }
 
         // GET api/<CoursesController>
-        [HttpGet("api/courses/:id/grade")]
-        public ActionResult<List<CourseResponse>> GetGradesByCoursesId([FromRoute] Guid id)
-        {
-            var grade = new CourseResponse();
-            return Ok(grade);
-        }
-
-        // GET api/<CoursesController>
         [HttpGet("api/courses/:id/student")]
         public ActionResult<List<StudentResponse>> GetStudentsByCoursesId([FromRoute] Guid id)
         {
             var student = new List<StudentResponse>();
             return student.ToList();
+        }
+
+        // GET api/<CoursesController>
+        [HttpGet("api/courses/:id/grade")]
+        public ActionResult<List<CourseResponse>> GetGradesByCoursesId([FromRoute] Guid id)
+        {
+            var grade = new CourseResponse();
+            return Ok(grade);
         }
 
         // PATCH api/<UsersController>
