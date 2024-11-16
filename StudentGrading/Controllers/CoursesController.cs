@@ -1,5 +1,4 @@
-﻿using GradeBook.Models.Requests;
-using GradeBook.Models.Responses;
+﻿using GradeBook.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GradeBook.Controllers
@@ -24,31 +23,25 @@ namespace GradeBook.Controllers
             return course.ToList();
         }
 
-        // GET api/<CoursesController>/5
-        [HttpGet("{id}")]
-        public ActionResult<List<UserWithCourseResponse>> GetCourseByUserId([FromRoute] Guid id)
+        // GET api/<CoursesController>
+        [HttpGet("api/courses/:id/grade")]
+        public ActionResult<List<CourseResponse>> GetGradesByCoursesId([FromRoute] Guid id)
         {
-            var course = new UserWithCourseResponse();
-            return Ok(course);
+            var grade = new CourseResponse();
+            return Ok(grade);
         }
 
-        // PUT api/<CoursesController>/5
-        [HttpPut("{id}")]
-        public IActionResult UpdateCourse([FromRoute] Guid id, [FromBody] UpdateUserRequest request)
+        // GET api/<CoursesController>
+        [HttpGet("api/courses/:id/student")]
+        public ActionResult<List<StudentResponse>> GetStudentsByCoursesId([FromRoute] Guid id)
         {
-            return NoContent();
+            var student = new List<StudentResponse>();
+            return student.ToList();
         }
 
-        // PATCH api/<UsersController>/5
+        // PATCH api/<UsersController>
         [HttpPatch("{id}/deactivate")]
         public IActionResult DeactivateCourse([FromRoute] Guid id)
-        {
-            return NoContent();
-        }
-
-        // DELETE api/<CoursesController>/5
-        [HttpDelete("{id}")]
-        public IActionResult DeleteCourse([FromRoute] Guid id)
         {
             return NoContent();
         }

@@ -6,7 +6,7 @@ namespace GradeBook.Controllers
 {
     [ApiController]
     [Route("api/users")]
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
         // POST api/<UsersController>
         [HttpPost]
@@ -28,6 +28,14 @@ namespace GradeBook.Controllers
         public ActionResult<List<UserResponse>> GetUsers()
         {
             return Ok();
+        }
+
+        // GET api/<CoursesController>/5
+        [HttpGet("{id}")]
+        public ActionResult<List<UserWithCourseResponse>> GetCourseByUserId([FromRoute] Guid id)
+        {
+            var course = new UserWithCourseResponse();
+            return Ok(course);
         }
 
         // GET api/<UsersController>/5

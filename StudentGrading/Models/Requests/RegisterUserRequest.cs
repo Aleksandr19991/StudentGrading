@@ -1,7 +1,12 @@
-﻿namespace GradeBook.Models.Requests;
+﻿using StudentGrading.Models;
+
+namespace GradeBook.Models.Requests;
 public class RegisterUserRequest
 {
     public string Name { get; set; }
+    public string LastName { get; set; }
+    public string Phone { get; set; }
     public string Email { get; set; }
-    public enum UserRole { Student, Teacher }
+    public string Password { get; set; }
+    public UserRole Role { get; set; }
 }
