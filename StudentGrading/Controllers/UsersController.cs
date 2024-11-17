@@ -23,7 +23,7 @@ namespace GradeBook.Controllers
             return Ok();
         }
 
-        [HttpGet("api/users/:id/userResponse")]
+        [HttpGet(":id/userResponse")]
         public ActionResult<UserResponse> GetRoleByUserId([FromRoute] Guid id)
         {
             var role = new UserResponse();
@@ -31,7 +31,7 @@ namespace GradeBook.Controllers
         }
 
         // GET api/<UsersController>/5
-        [HttpGet("api/users/:id/courses")]
+        [HttpGet(":id/courses")]
         public ActionResult<List<UserWithCourseResponse>> GetCoursesByUserId([FromRoute] Guid id)
         {
             var course = new List<UserWithCourseResponse>();
