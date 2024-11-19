@@ -32,5 +32,7 @@ namespace DAL
             var students = context.Students.Include(s => s.Course).Where(c => c.Course.Id == courseId).FirstOrDefault();
             return context.Students.ToList();
         }
+
+        public IEnumerable<StudentDto> GetGradesByCoursesId()
     }
 }
