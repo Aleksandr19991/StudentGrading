@@ -23,12 +23,12 @@ namespace GradeBook.Controllers
             return Ok();
         }
 
-        //[HttpGet(":id/userResponse")]
-        //public ActionResult<UserResponse> GetRoleByUserId([FromRoute] Guid id)
-        //{
-        //    var role = new UserResponse();
-        //    return Ok(role);
-        //}
+        [HttpPatch("{id}/role")]
+        public ActionResult<UserResponse> ChangeRoleByUserId([FromRoute] Guid id)
+        {
+            var role = new UserResponse();
+            return Ok(role);
+        }
 
         // GET api/<UsersController>/5
         [HttpGet(":id/courses")]
