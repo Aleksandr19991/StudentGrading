@@ -1,6 +1,8 @@
 ﻿using GradeBook.Models.Requests;
 using GradeBook.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using StudentGrading.Models;
 
 namespace GradeBook.Controllers
 {
@@ -18,7 +20,7 @@ namespace GradeBook.Controllers
 
         // "api/users/login"
         [HttpPost("login")]
-        public IActionResult LogIn([FromBody] LoginRequest request)
+        public IActionResult LogIn([FromBody] LoginModel model)
         {
             return Ok();
         }
@@ -31,7 +33,7 @@ namespace GradeBook.Controllers
         }
 
         // GET api/<UsersController>/5
-        [HttpGet(":id/courses")]
+        [HttpGet, Authorize (":id/courses")]
         public ActionResult<List<UserWithCourseResponse>> GetCoursesByUserId([FromRoute] Guid id)
         {
             var course = new List<UserWithCourseResponse>();
