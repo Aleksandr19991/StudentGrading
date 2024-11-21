@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StudentGrading.Models.Dtos;
+﻿using DAL.Models.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL;
 
