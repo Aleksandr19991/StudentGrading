@@ -1,7 +1,4 @@
-﻿using StudentGrading.Models;
-using StudentGrading.Models.Dtos;
-
-namespace DAL
+﻿namespace DAL
 {
     public class UserRepository
     {

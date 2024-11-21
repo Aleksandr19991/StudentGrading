@@ -26,15 +26,7 @@ builder.Services.AddAuthentication(opt =>
      };
  });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("EnableCORS", builder =>
-    {
-        builder.AllowAnyOrigin()
-        .AllowAnyHeader()
-        .AllowAnyMethod();
-    });
-});
+// api on bll, bll on dal
 
 // Add services to the container.
 builder.Services.AddControllers();

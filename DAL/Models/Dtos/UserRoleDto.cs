@@ -1,4 +1,4 @@
-﻿namespace StudentGrading.Models.Dtos;
+﻿namespace DAL.Models.Dtos;
 
 public class UserRoleDto
 {
